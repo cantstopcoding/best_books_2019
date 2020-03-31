@@ -8,7 +8,28 @@ class BestBooks2019::CLI
     end
 
     def get_genres # get_advertised_genres
-        @genres = []
+        @genres = [
+            "Fiction",
+            "Mystery & Thriller",
+            "Historical Fiction",
+            "Fantasy",
+            "Romance",
+            "Science Fiction",
+            "Horror",
+            "Humor",
+            "Nonfiction",
+            "Memoir & Autobiography",
+            "History & Biography",
+            "Science & Technology",
+            "Food & Cookbooks",
+            "Graphic Novels & Comics",
+            "Poetry",
+            "Debut Novel",
+            "Young Adult Fiction",
+            "Young Adult Fantacy",
+            "Middle Grade & Children's",
+            "Picture Books"
+        ]
     end 
 
     def get_user_genre 
