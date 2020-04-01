@@ -43,12 +43,11 @@ class BestBooks2019::CLI
     def get_user_genre
         picked_genre = gets.chomp.strip
         binding.pry 
-        # if valid_input(picked_genre.to_i)
-
-        # end
-
-        def valid_input(input, data)
-            input.to_i <= @genres.length && input > 0
-        end
+        # if valid_input(picked_genre, @genres)
     end
+    
+    def valid_input(input, data)
+        input.to_i <= data.length && input.to_i > 0
+    end
+    
 end
