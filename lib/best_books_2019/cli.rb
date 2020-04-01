@@ -1,13 +1,15 @@
 class BestBooks2019::CLI
     def call
         puts "Welcome! Select a genre and see the best books in 2019 for it..."
-        # get_advertised_genres
+        get_genres
+        list_genres
         # get_user_genre
         # get_books_for(genre)
         # list books
     end
 
     def get_genres # get_advertised_genres
+        # This is hard coded, and will be scraped
         @genres = [
             "Fiction",
             "Mystery & Thriller",
@@ -32,7 +34,7 @@ class BestBooks2019::CLI
         ]
     end 
 
-    def get_user_genre 
-        genre = ['']
+    def list_genres 
+        @genres.each.with_index(1) {|month, index| puts "#{index}. #{month}"}
     end
 end
