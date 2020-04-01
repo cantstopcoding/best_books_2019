@@ -1,9 +1,9 @@
 class BestBooks2019::CLI
     def call
-        puts "Welcome! Select a genre and see the best books in 2019 for it..."
+        puts "\nWelcome. Check out Goodreads' Best Books of 2019!"
         get_genres
         list_genres
-        # get_user_genre
+        get_user_genre
         # get_books_for(genre)
         # list books
     end
@@ -35,6 +35,15 @@ class BestBooks2019::CLI
     end 
 
     def list_genres 
+        puts "\nPick a genre."
+        
         @genres.each.with_index(1) {|month, index| puts "#{index}. #{month}"}
+    end
+
+    def get_user_genre
+        chosen_genre = gets.chomp.strip
+        # if chosen_genre.to_i <= @genres.length && chosen_genre > 0
+        # You left off the line above
+        binding.pry 
     end
 end
