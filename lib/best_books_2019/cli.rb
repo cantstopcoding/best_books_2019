@@ -8,15 +8,16 @@ class BestBooks2019::CLI
         # list books
     end
 
-    def get_genres # get_advertised_genres
-        # This is hard coded, and will be scraped
+    def get_genres 
         @genres = BestBooks2019::Genre.all
     end 
 
     def list_genres 
         puts "\nPick a genre."
         
-        @genres.each.with_index(1) {|month, index| puts "#{index}. #{month}"}
+        @genres.each.with_index(1) do |genre, index| 
+            puts "#{index}. #{genre.name}"
+        end
     end
 
     def get_user_genre
@@ -30,7 +31,7 @@ class BestBooks2019::CLI
     
     def show_genres_for(picked_genre)
         genre = @genres[picked_genre - 1]
-        puts "\nHere are the best books in 2019 for #{genre}"
+        puts "\nHere are the best books in 2019 for #{genre.name}"
         # BestBooks2019::Book.all.each.with_index(1) do |book, index|
         #     puts Book.name
         # end
