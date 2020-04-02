@@ -10,28 +10,7 @@ class BestBooks2019::CLI
 
     def get_genres # get_advertised_genres
         # This is hard coded, and will be scraped
-        @genres = [
-            "Fiction",
-            "Mystery & Thriller",
-            "Historical Fiction",
-            "Fantasy",
-            "Romance",
-            "Science Fiction",
-            "Horror",
-            "Humor",
-            "Nonfiction",
-            "Memoir & Autobiography",
-            "History & Biography",
-            "Science & Technology",
-            "Food & Cookbooks",
-            "Graphic Novels & Comics",
-            "Poetry",
-            "Debut Novel",
-            "Young Adult Fiction",
-            "Young Adult Fantacy",
-            "Middle Grade & Children's",
-            "Picture Books"
-        ]
+        @genres = BestBooks2019::Genre.all
     end 
 
     def list_genres 
@@ -51,7 +30,10 @@ class BestBooks2019::CLI
     
     def show_genres_for(picked_genre)
         genre = @genres[picked_genre - 1]
-        puts "Here are the best books in 2019 for #{genre}"
-        binding.pry
+        puts "\nHere are the best books in 2019 for #{genre}"
+        # BestBooks2019::Book.all.each.with_index(1) do |book, index|
+        #     puts Book.name
+        # end
+        # get_user_book
     end
 end
