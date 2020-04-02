@@ -9,6 +9,7 @@ class BestBooks2019::Genre
     end
     
     def self.all 
+        BestBooks2019::Scraper.scrape_genres if @@all.empty?
         @@all 
     end
 end

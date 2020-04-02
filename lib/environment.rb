@@ -4,6 +4,8 @@ require_relative "./best_books_2019/genre"
 require_relative "./best_books_2019/scraper"
 
 require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
 module BestBooks2019
   class Error < StandardError; end
