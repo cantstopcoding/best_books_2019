@@ -1,6 +1,5 @@
 class BestBooks2019::Genre
-    attr_accessor :name 
-    attr_writer :books 
+    attr_accessor :name, :books 
     
     @@all = []
 
@@ -15,8 +14,7 @@ class BestBooks2019::Genre
         @@all 
     end
 
-    def books 
+    def get_books
         BestBooks2019::Scraper.scrape_books(self) if @books.empty?
-        @books 
-    end 
+    end
 end

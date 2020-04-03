@@ -8,6 +8,10 @@ class BestBooks2019::Scraper
             name = genre.text.strip
             BestBooks2019::Genre.new(name)
         end 
-        # binding.pry
     end
+
+    def self.scrape_books(genre)
+        BestBooks2019::Book.new("The Testaments by Margaret Atwood", genre)
+        BestBooks2019::Book.new("Normal People by Sally Rooney", genre)
+    end 
 end 

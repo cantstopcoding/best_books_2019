@@ -31,8 +31,11 @@ class BestBooks2019::CLI
     
     def show_books_for(picked_genre)
         genre = @genres[picked_genre - 1]
-        books = genre.books 
+        genre.get_books 
         puts "\nHere are the best books in 2019 for the #{genre.name} genre"
+        genre.books.each.with_index(1) do |book, index|
+            puts "#{book.title}"
+        end
         # BestBooks2019::Book.all.each.with_index(1) do |book, index|
         #     puts Book.name
         # end
