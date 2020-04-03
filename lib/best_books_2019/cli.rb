@@ -22,16 +22,17 @@ class BestBooks2019::CLI
 
     def get_user_genre
         picked_genre = gets.chomp.strip.to_i 
-        show_genres_for(picked_genre) if valid_input(picked_genre, @genres)
+        show_books_for(picked_genre) if valid_input(picked_genre, @genres)
     end
     
     def valid_input(input, data)
         input.to_i <= data.length && input.to_i > 0
     end
     
-    def show_genres_for(picked_genre)
+    def show_books_for(picked_genre)
         genre = @genres[picked_genre - 1]
-        puts "\nHere are the best books in 2019 for #{genre.name}"
+        books = genre.books 
+        puts "\nHere are the best books in 2019 for the #{genre.name} genre"
         # BestBooks2019::Book.all.each.with_index(1) do |book, index|
         #     puts Book.name
         # end
